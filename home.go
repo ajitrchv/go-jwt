@@ -40,5 +40,6 @@ func Home(w http.ResponseWriter, r *http.Request){
 	}
 
 	w.Write([]byte(fmt.Sprintf("Hello, %s!", claims.Username)))
+	w.Write([]byte("Welcome home"))
 	
 }
