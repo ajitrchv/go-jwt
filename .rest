@@ -14,3 +14,6 @@ GET http://localhost:8080/refresh
 
 ###
 GET http://localhost:8080/
+
+###
+GET http://localhost:8080/home

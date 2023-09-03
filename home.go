@@ -9,6 +9,21 @@ import (
 
 
 func Home(w http.ResponseWriter, r *http.Request){
+	var page = `
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>
+			Hi, welcome to my random learning!
+		</h1>
+		<p>Please help me to get a good job!</p>
+	</body>
+	</html>
+	`
 	cookie, err := r.Cookie("token")
 	if err != nil{
 		if err == http.ErrNoCookie{
@@ -39,8 +54,8 @@ func Home(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
-	w.Write([]byte(fmt.Sprintf("Hello, Mr.%s!\n", claims.Username)))
-	w.Write([]byte("Welcome home"))
+	w.Write([]byte(fmt.Sprintf("<h1>Hello, Mr.%s!</h1>\n", claims.Username)))
+	w.Write([]byte(page))
 }
 
 
